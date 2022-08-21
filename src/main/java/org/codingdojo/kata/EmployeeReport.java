@@ -13,10 +13,11 @@ public class EmployeeReport {
         this.employees = List.of(employees);
     }
 
-    public List<Employee> getAdult() {
+    public List<String> getAdult() {
         return employees.stream()
                 .filter(Employee::isAdult)
                 .sorted(comparing(Employee::name))
+                .map(Employee::name)
                 .collect(toList());
     }
 }

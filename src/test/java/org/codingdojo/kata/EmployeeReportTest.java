@@ -14,7 +14,7 @@ public class EmployeeReportTest {
     EmployeeReport employeeReport;
 
     @Test
-    void should_return_adult_employees_sorted_by_name() {
+    void should_return_adult_employee_sorted_and_capitalized_names() {
         // GIVEN
         Employee max = new Employee("Max", 17);
         Employee sepp = new Employee("Sepp", 18);
@@ -23,10 +23,10 @@ public class EmployeeReportTest {
         employeeReport = new EmployeeReport(max, sepp, nina, mike);
 
         // WHEN
-        List<Employee> result = employeeReport.getAdult();
+        var result = employeeReport.getAdult();
 
         // THEN
-        assertThat(result).containsExactly(mike, sepp);
+        assertThat(result).containsExactly("MIKE", "SEPP");
     }
 
 }
