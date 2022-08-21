@@ -18,6 +18,7 @@ public class EmployeeReport {
                 .filter(Employee::isAdult)
                 .sorted(comparing(Employee::name))
                 .map(Employee::name)
+                .map(String::toUpperCase)
                 .collect(toList());
     }
 }
