@@ -15,7 +15,7 @@ public class EmployeeReportTest {
     EmployeeReport employeeReport;
 
     @Test
-    void should_return_adult_employees() {
+    void should_return_adult_employees_sorted_by_name() {
         // GIVEN
         Employee max = new Employee("Max", 17);
         Employee sepp = new Employee("Sepp", 18);
@@ -27,7 +27,7 @@ public class EmployeeReportTest {
         List<Employee> result = employeeReport.getAdult();
 
         // THEN
-        assertThat(result).containsExactly(sepp, mike);
+        assertThat(result).containsExactly(mike, sepp);
     }
 
 }
