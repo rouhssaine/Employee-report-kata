@@ -1,8 +1,8 @@
 package org.codingdojo.kata;
 
-import java.util.Comparator;
 import java.util.List;
 
+import static java.util.Comparator.reverseOrder;
 import static java.util.stream.Collectors.toList;
 
 public class EmployeeReport {
@@ -18,7 +18,7 @@ public class EmployeeReport {
                 .filter(Employee::isAdult)
                 .map(Employee::name)
                 .map(String::toUpperCase)
-                .sorted(Comparator.reverseOrder())
+                .sorted(reverseOrder())
                 .collect(toList());
     }
 }
