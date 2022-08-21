@@ -2,10 +2,19 @@ package org.codingdojo.kata;
 
 import java.util.List;
 
+import static java.util.stream.Collectors.toList;
+
 public class EmployeeReport {
 
+    private List<Employee> employees;
+
+    public EmployeeReport(Employee... employees) {
+        this.employees = List.of(employees);
+    }
+
     public List<Employee> getAdult() {
-        return List.of(new Employee("Sepp", 18),
-                new Employee("Max", 51));
+        return employees.stream()
+                .filter(Employee::isAdult)
+                .collect(toList());
     }
 }
