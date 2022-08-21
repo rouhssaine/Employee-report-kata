@@ -22,8 +22,8 @@ public class EmployeeReportTest {
     }
 
     @Test
-    void should_return_adult_employee_sorted_and_capitalized_names() {
-        assertThat(employeeReport.getAdult()).containsExactly("MIKE", "SEPP");
+    void should_return_adult_employee_capitalized_and_descending_sorted_names() {
+        assertThat(employeeReport.getAdult()).containsExactly("SEPP", "MIKE");
     }
 
 }
